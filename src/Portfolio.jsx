@@ -7,18 +7,17 @@ export default function Portfolio() {
     { label: "Contact", href: "#contact" },
   ];
 
-  // ---- Update these hrefs after you place files in /public/files (see section B) ----
+  // ---------------------------- PROJECT DATA ----------------------------
   const valuation = [
     {
       title: "Breville Equity Research Report – ACF5130",
       summary:
         "Comprehensive equity analysis of Breville Group (ASX: BRG), covering 20 years of earnings quality, DuPont financial analysis, five-year forecasts, WACC (10.24%), and multiple valuation approaches (FCFF, DDM, and Relative). Valued equity at ~$4.0B (~$28/share) vs. market price $32, leading to a Sell recommendation.",
       links: [
-  { label: "Full Report (PDF)", href: "/files/Instructions-Individual-Project-2024.pdf" },
-  { label: "Model (XLSX)", href: "/files/ACF-Individual-Assignment-Model.xlsx" },
-  { label: "Earnings Quality Model (XLSX)", href: "/files/BRG-Earnings-Quality.xlsx" },
-]
-,
+        { label: "Full Report (PDF)", href: "/files/Instructions-Individual-Project-2024.pdf" },
+        { label: "Model (XLSX)", href: "/files/ACF-Individual-Assignment-Model.xlsx" },
+        { label: "Earnings Quality Model (XLSX)", href: "/files/BRG-Earnings-Quality.xlsx" },
+      ],
       tags: ["Equity Research", "Valuation", "WACC", "FCFF", "DDM"],
     },
     {
@@ -26,10 +25,9 @@ export default function Portfolio() {
       summary:
         "Analysed Seven Group Holdings’ potential acquisition of Viva Energy: standalone DCF (negative equity value due to leverage), relative valuation (EV/EBITDA & EV/EBIT), and synergy valuation (20% operating income uplift). Found synergy-driven EV of ~$9.7B and implied share price $4.45 vs. $3.38, recommending a 20–30% control premium via a cash/equity mix.",
       links: [
-  { label: "Report (PDF)", href: "/files/MA-Major-Assignment-Sravanth-Saranu.pdf" },
-  { label: "Model (XLSX)", href: "/files/MA-Major-Assignment-Model.xlsx" },
-]
-,
+        { label: "Report (PDF)", href: "/files/MA-Major-Assignment-Sravanth-Saranu.pdf" },
+        { label: "Model (XLSX)", href: "/files/MA-Major-Assignment-Model.xlsx" },
+      ],
       tags: ["M&A", "DCF", "Relative Valuation", "Synergies", "Deal Structure"],
     },
     {
@@ -37,10 +35,9 @@ export default function Portfolio() {
       summary:
         "Analysed A2 Milk’s capital structure, WACC, and FX risk; modelled forward/option hedges; valued Japan expansion at ~AUD $25m NPV using parity-consistent discounting.",
       links: [
-  { label: "Report (DOCX)", href: "/files/BFF5956-A2-Report.docx" },
-  { label: "Model (XLSX)", href: "/files/BFF5956-A2-Model.xlsx" },
-]
-,
+        { label: "Report (DOCX)", href: "/files/BFF5956-A2-Report.docx" },
+        { label: "Model (XLSX)", href: "/files/BFF5956-A2-Model.xlsx" },
+      ],
       tags: ["DCF", "WACC", "FX Hedging"],
     },
   ];
@@ -50,7 +47,7 @@ export default function Portfolio() {
       title: "Rotman Portfolio Manager – Options Trading Simulation",
       summary:
         "Managed a US$1M simulated options portfolio across five strategies (calendar, theta, vega, gamma, mono-directional). Generated a 4.5% return in under a month using Greeks for hedging and risk control.",
-      links: [], // intentionally empty
+      links: [], // no files
       tags: ["Options", "Greeks", "Risk Management", "Trading"],
     },
   ];
@@ -60,18 +57,16 @@ export default function Portfolio() {
       title: "Financial Advisory Report – Investment Strategy (BFF5270)",
       summary:
         "Advised an experienced property developer: shift SAA from 50/50 to 70/30 growth/defensive, reallocate gold to international equities, continue passive funds; assessed ethics/legality around insider information and advised against; no TAA needed given horizon.",
-     links: [
-  { label: "Report (PDF)", href: "/files/Case-Study-Report.pdf" },
-]
-,
+      links: [{ label: "Report (PDF)", href: "/files/Case-Study-Report.pdf" }],
+      tags: ["Financial Advisory", "Asset Allocation", "Passive Funds", "Ethics"],
+    },
     {
       title: "Applied Investment Group Project – BFF5220",
       summary:
         "Studied size & momentum effects using CAPM and Fama-French 3/5/6. Backtested long-short portfolios on 150 stocks over four weeks (−5.9%); concluded factor payoffs are time-varying and market-sensitive.",
-     links: [
-  { label: "Report (DOC)", href: "/files/Applied-Investment-Group-Report.doc" },
-]
-,
+      links: [{ label: "Report (DOC)", href: "/files/Applied-Investment-Group-Report.doc" }],
+      tags: ["Factor Investing", "Backtesting", "Momentum", "Size Effect"],
+    },
   ];
 
   const socials = [
@@ -79,6 +74,7 @@ export default function Portfolio() {
     { label: "Email", href: "mailto:sravanthsaranu08@gmail.com" },
   ];
 
+  // ---------------------------- UI --------------------------------------
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-50">
       {/* Header */}
