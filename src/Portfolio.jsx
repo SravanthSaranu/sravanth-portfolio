@@ -7,28 +7,29 @@ export default function Portfolio() {
     { label: "Contact", href: "#contact" },
   ];
 
+  // ---- Update these hrefs after you place files in /public/files (see section B) ----
   const valuation = [
     {
       title: "Breville Equity Research Report – ACF5130",
       summary:
         "Comprehensive equity analysis of Breville Group (ASX: BRG), covering 20 years of earnings quality, DuPont financial analysis, five-year forecasts, WACC (10.24%), and multiple valuation approaches (FCFF, DDM, and Relative). Valued equity at ~$4.0B (~$28/share) vs. market price $32, leading to a Sell recommendation.",
-      // TODO: replace sandbox: links with public links later (Drive/Notion/Dropbox)
       links: [
-        { label: "Full Report (PDF)", href: "#" },
-        { label: "Model (XLSX)", href: "#" },
-        { label: "Earnings Quality Model (XLSX)", href: "#" },
-        { label: "Assignment Instructions (PDF)", href: "#" },
-      ],
+  { label: "Full Report (PDF)", href: "/files/Instructions-Individual-Project-2024.pdf" },
+  { label: "Model (XLSX)", href: "/files/ACF-Individual-Assignment-Model.xlsx" },
+  { label: "Earnings Quality Model (XLSX)", href: "/files/BRG-Earnings-Quality.xlsx" },
+]
+,
       tags: ["Equity Research", "Valuation", "WACC", "FCFF", "DDM"],
     },
     {
       title: "M&A Valuation Report – Seven Group Holdings & Viva Energy",
       summary:
-        "Analysed Seven Group Holdings’ potential acquisition of Viva Energy: standalone DCF (negative equity value due to leverage), relative valuation (EV/EBITDA & EV/EBIT), synergy valuation with 20% operating income uplift. Found synergy-driven EV of ~$9.7B and implied share price $4.45 vs. $3.38, recommending acquisition with a 20–30% control premium via a cash/equity mix.",
+        "Analysed Seven Group Holdings’ potential acquisition of Viva Energy: standalone DCF (negative equity value due to leverage), relative valuation (EV/EBITDA & EV/EBIT), and synergy valuation (20% operating income uplift). Found synergy-driven EV of ~$9.7B and implied share price $4.45 vs. $3.38, recommending a 20–30% control premium via a cash/equity mix.",
       links: [
-        { label: "Report (PDF)", href: "#" },
-        { label: "Model (XLSX)", href: "#" },
-      ],
+  { label: "Report (PDF)", href: "/files/MA-Major-Assignment-Sravanth-Saranu.pdf" },
+  { label: "Model (XLSX)", href: "/files/MA-Major-Assignment-Model.xlsx" },
+]
+,
       tags: ["M&A", "DCF", "Relative Valuation", "Synergies", "Deal Structure"],
     },
     {
@@ -36,9 +37,10 @@ export default function Portfolio() {
       summary:
         "Analysed A2 Milk’s capital structure, WACC, and FX risk; modelled forward/option hedges; valued Japan expansion at ~AUD $25m NPV using parity-consistent discounting.",
       links: [
-        { label: "Report (DOCX)", href: "#" },
-        { label: "Model (XLSX)", href: "#" },
-      ],
+  { label: "Report (DOCX)", href: "/files/BFF5956-A2-Report.docx" },
+  { label: "Model (XLSX)", href: "/files/BFF5956-A2-Model.xlsx" },
+]
+,
       tags: ["DCF", "WACC", "FX Hedging"],
     },
   ];
@@ -58,16 +60,18 @@ export default function Portfolio() {
       title: "Financial Advisory Report – Investment Strategy (BFF5270)",
       summary:
         "Advised an experienced property developer: shift SAA from 50/50 to 70/30 growth/defensive, reallocate gold to international equities, continue passive funds; assessed ethics/legality around insider information and advised against; no TAA needed given horizon.",
-      links: [{ label: "Report (PDF)", href: "#" }],
-      tags: ["Financial Advisory", "Asset Allocation", "Passive Funds", "Ethics"],
-    },
+     links: [
+  { label: "Report (PDF)", href: "/files/Case-Study-Report.pdf" },
+]
+,
     {
       title: "Applied Investment Group Project – BFF5220",
       summary:
         "Studied size & momentum effects using CAPM and Fama-French 3/5/6. Backtested long-short portfolios on 150 stocks over four weeks (−5.9%); concluded factor payoffs are time-varying and market-sensitive.",
-      links: [{ label: "Report (DOC)", href: "#" }],
-      tags: ["Factor Investing", "Backtesting", "Momentum", "Size Effect"],
-    },
+     links: [
+  { label: "Report (DOC)", href: "/files/Applied-Investment-Group-Report.doc" },
+]
+,
   ];
 
   const socials = [
@@ -75,10 +79,9 @@ export default function Portfolio() {
     { label: "Email", href: "mailto:sravanthsaranu08@gmail.com" },
   ];
 
-  const testResults = runSelfTests({ valuation, derivatives, portfolio, socials });
-
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-50">
+      {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur bg-neutral-950/70 border-b border-neutral-800">
         <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
           <a href="#" className="text-xl font-semibold tracking-tight">Sravanth Saranu</a>
@@ -93,6 +96,7 @@ export default function Portfolio() {
       </header>
 
       <main className="mx-auto max-w-6xl px-4">
+        {/* About */}
         <section id="about" className="py-12 md:py-20">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
@@ -108,17 +112,22 @@ export default function Portfolio() {
                 connecting theory to real-world investing - a journey that led me to pursue advanced finance in Australia
                 and commit myself fully to a future in finance.
               </p>
-              <TestBadge results={testResults} />
+
               <div className="mt-6 flex flex-wrap gap-3">
                 {socials.map((s) => (
-                  <a key={s.href} href={s.href}
-                     className="px-4 py-2 rounded-2xl border border-neutral-700 hover:border-neutral-500 text-sm"
-                     target="_blank" rel="noopener noreferrer">
+                  <a
+                    key={s.href}
+                    href={s.href}
+                    className="px-4 py-2 rounded-2xl border border-neutral-700 hover:border-neutral-500 text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {s.label}
                   </a>
                 ))}
               </div>
             </div>
+
             <div className="relative">
               <div className="aspect-[4/3] w-full rounded-2xl bg-gradient-to-br from-neutral-900 to-neutral-800 border border-neutral-800 shadow-xl p-6 flex flex-col justify-between">
                 <div>
@@ -143,10 +152,12 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Sections */}
         <Section id="valuation" title="Valuation Models (DCF, Comps, M&A)" items={valuation} />
         <Section id="derivatives" title="Derivatives & Trading Simulations" items={derivatives} />
         <Section id="portfolio" title="Portfolio Strategy Reports" items={portfolio} />
 
+        {/* Contact */}
         <section id="contact" className="py-16 border-t border-neutral-800 mt-8">
           <h2 className="text-2xl font-semibold">Contact</h2>
           <p className="mt-3 text-neutral-300">
@@ -155,15 +166,20 @@ export default function Portfolio() {
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             {socials.map((s) => (
-              <a key={s.href} href={s.href}
-                 className="px-4 py-2 rounded-2xl border border-neutral-700 hover:border-neutral-500 text-sm"
-                 target="_blank" rel="noopener noreferrer">
+              <a
+                key={s.href}
+                href={s.href}
+                className="px-4 py-2 rounded-2xl border border-neutral-700 hover:border-neutral-500 text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {s.label}
               </a>
             ))}
           </div>
         </section>
 
+        {/* Footer */}
         <footer className="py-10 text-sm text-neutral-500">
           <div className="flex items-center justify-between">
             <p>© {new Date().getFullYear()} Sravanth Saranu</p>
@@ -205,44 +221,18 @@ function Card({ title, summary, links, tags }) {
       {Array.isArray(links) && links.length > 0 && (
         <div className="mt-4 flex flex-wrap gap-3">
           {links.map((l) => (
-            <a key={l.href} href={l.href}
-               className="text-sm underline underline-offset-4 decoration-neutral-600 hover:decoration-neutral-300"
-               target="_blank" rel="noopener noreferrer">
+            <a
+              key={l.href}
+              href={l.href}
+              className="text-sm underline underline-offset-4 decoration-neutral-600 hover:decoration-neutral-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {l.label}
             </a>
           ))}
         </div>
       )}
-    </div>
-  );
-}
-
-// --------- simple runtime checks (dev only) ---------
-function runSelfTests(d) {
-  const errors = [];
-  ["valuation","derivatives","portfolio"].forEach((k) => {
-    const arr = d[k];
-    if (!Array.isArray(arr) || !arr.length) errors.push(`${k} missing/empty`);
-    arr?.forEach((it,i) => {
-      if (!it.title) errors.push(`${k}[${i}].title missing`);
-      if (!it.summary) errors.push(`${k}[${i}].summary missing`);
-      if (!Array.isArray(it.tags)) errors.push(`${k}[${i}].tags missing`);
-    });
-  });
-  if (!Array.isArray(d.socials) || d.socials.length < 2) errors.push("socials missing/incomplete");
-  if (errors.length) console.warn("Portfolio self-tests:", errors);
-  else console.log("Portfolio self-tests passed");
-  return { ok: !errors.length, errors };
-}
-
-function TestBadge({ results }) {
-  const cls = results.ok
-    ? "bg-emerald-900/40 text-emerald-300 border-emerald-800"
-    : "bg-rose-900/40 text-rose-300 border-rose-800";
-  return (
-    <div className={`mt-4 inline-flex items-center gap-2 text-xs px-3 py-1 rounded-full border ${cls}`}>
-      <span className="inline-block w-1.5 h-1.5 rounded-full bg-current"></span>
-      {results.ok ? "All tests passed" : `${results.errors.length} issue(s)`}
     </div>
   );
 }
