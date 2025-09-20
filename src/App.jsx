@@ -2,11 +2,10 @@ import React from "react";
 
 /**
  * Set this to the folder under /public where your files actually live.
- * - Right now your VS Code shows: public/files/drive-download-20250919T024235Z-1-001/
- * - So we use: /files/drive-download-20250919T024235Z-1-001/
- * If you later move files up to public/files, change this to "/files/".
+ * - Files are located at: public/public/files/drive-download-20250919T024235Z-1-001/
+ * - So we use: /public/files/drive-download-20250919T024235Z-1-001/
  */
-const BASE_DIR = "/files/drive-download-20250919T024235Z-1-001/";
+const BASE_DIR = "/public/files/drive-download-20250919T024235Z-1-001/";
 
 // Helper to safely build a URL with spaces/(1) etc.
 const fileUrl = (name) => encodeURI(`${BASE_DIR}${name}`);
@@ -55,7 +54,7 @@ const valuation = [
     summary:
       "Earnings quality analysis for Breville Group with supporting schedules.",
     links: [
-      { label: "Report (XLSX)", href: fileUrl("BRG Earnings Quality.xlsx") },
+      { label: "Report (XLSX)", href: fileUrl("BRG Earnings Quality - Individual Report (1).xlsx") },
     ],
     tags: ["Quality", "Forensics"],
   },
@@ -75,7 +74,7 @@ const derivatives = [
     summary:
       "Valuation model and analysis workbook.",
     links: [
-      { label: "Model (XLSX)", href: fileUrl("ACF Individual assignement Srav.xlsx") },
+      { label: "Model (XLSX)", href: fileUrl("ACF Induvidual assignement Srav.xlsx") },
     ],
     tags: ["Excel", "Valuation"],
   },
